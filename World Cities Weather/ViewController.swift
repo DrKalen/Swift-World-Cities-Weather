@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherLabel: UILabel!
     
     @IBAction func getWeatherButton(_ sender: UIButton) {
+        cityTextField.resignFirstResponder()
         let desiredCity = NSString(string: cityTextField.text ?? "X").replacingOccurrences(of: " ", with: "-")
         if let url = URL(string: "https://www.weather-forecast.com/locations/" + desiredCity + "/forecasts/latest") {
             let request = NSMutableURLRequest(url: url)
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
                 if let error = error {
                     print(error)
                     DispatchQueue.main.sync {
-                        print("The weather there couldn't be found. Please try again")
+                        self.weatherLabel.text = "The weather there couldn't be found. Please try again."
                     }
                 } else {
                     if let unwrappedData = data {
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
                         DispatchQueue.main.sync {
                             if let result = dataString {
                                 if result.contains("mistyped the address") {
-                                print("The weather there couldn't be found. Please try again.")
+                                self.weatherLabel.text = "The weather there couldn't be found. Please try again."
                                 }
                             }
                             print("You want the weather for \(desiredCity), is that right?")

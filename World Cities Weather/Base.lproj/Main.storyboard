@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wang-xi-1213969-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="PPN-3G-DDh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wang-xi-1213969-small" translatesAutoresizingMaskIntoConstraints="NO" id="PPN-3G-DDh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnf-3w-qfv">
@@ -82,6 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="cityTextField" destination="5Q5-pV-4m7" id="w4D-Kb-JWv"/>
+                        <outlet property="weatherLabel" destination="aOm-ft-sxr" id="ebL-sZ-jXs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,6 +91,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="wang-xi-1213969-unsplash" width="2080" height="3120"/>
+        <image name="wang-xi-1213969-small" width="500" height="750"/>
     </resources>
 </document>

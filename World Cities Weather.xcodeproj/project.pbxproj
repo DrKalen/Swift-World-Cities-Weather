@@ -12,6 +12,7 @@
 		244235CD21BEAF02009BE4C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244235CB21BEAF02009BE4C0 /* Main.storyboard */; };
 		244235CF21BEAF03009BE4C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244235CE21BEAF03009BE4C0 /* Assets.xcassets */; };
 		244235D221BEAF03009BE4C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244235D021BEAF03009BE4C0 /* LaunchScreen.storyboard */; };
+		244235DA21BEF2A6009BE4C0 /* wang-xi-1213969-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 244235D921BEF2A5009BE4C0 /* wang-xi-1213969-small.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		244235CE21BEAF03009BE4C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		244235D121BEAF03009BE4C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		244235D321BEAF03009BE4C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		244235D921BEF2A5009BE4C0 /* wang-xi-1213969-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wang-xi-1213969-small.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				244235C721BEAF02009BE4C0 /* AppDelegate.swift */,
 				244235C921BEAF02009BE4C0 /* ViewController.swift */,
 				244235CB21BEAF02009BE4C0 /* Main.storyboard */,
+				244235D921BEF2A5009BE4C0 /* wang-xi-1213969-small.jpg */,
 				244235CE21BEAF03009BE4C0 /* Assets.xcassets */,
 				244235D021BEAF03009BE4C0 /* LaunchScreen.storyboard */,
 				244235D321BEAF03009BE4C0 /* Info.plist */,
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				244235D221BEAF03009BE4C0 /* LaunchScreen.storyboard in Resources */,
+				244235DA21BEF2A6009BE4C0 /* wang-xi-1213969-small.jpg in Resources */,
 				244235CF21BEAF03009BE4C0 /* Assets.xcassets in Resources */,
 				244235CD21BEAF02009BE4C0 /* Main.storyboard in Resources */,
 			);

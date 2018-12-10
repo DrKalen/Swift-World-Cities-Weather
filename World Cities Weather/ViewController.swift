@@ -29,6 +29,11 @@ class ViewController: UIViewController {
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
                         print(dataString ?? "Didn't work!")
                         DispatchQueue.main.sync {
+                            if let result = dataString {
+                                if result.contains("mistyped the address") {
+                                print("The weather there couldn't be found. Please try again.")
+                                }
+                            }
                             print("You want the weather for \(desiredCity), is that right?")
                         }
                     }

@@ -18,30 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wang-xi-1213969-small" translatesAutoresizingMaskIntoConstraints="NO" id="PPN-3G-DDh">
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wang-xi-1213969-small" translatesAutoresizingMaskIntoConstraints="NO" id="PPN-3G-DDh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnf-3w-qfv">
-                                <rect key="frame" x="84" y="172" width="207" height="30"/>
+                                <rect key="frame" x="84" y="207" width="207" height="30"/>
                                 <state key="normal" title="What's the weather like there?"/>
                                 <connections>
                                     <action selector="getWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YmR-I2-ycQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Cities Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izG-Pr-KJi">
-                                <rect key="frame" x="35.5" y="45" width="304" height="37"/>
+                                <rect key="frame" x="35.5" y="80" width="304" height="37"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the name of a major world city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHA-Sy-ndq">
-                                <rect key="frame" x="53.5" y="90" width="268" height="21"/>
+                                <rect key="frame" x="53.5" y="125" width="268" height="21"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-pV-4m7">
-                                <rect key="frame" x="112.5" y="134" width="150" height="30"/>
+                                <rect key="frame" x="112.5" y="169" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Pn7-BI-T0p"/>
                                 </constraints>
@@ -49,13 +49,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOm-ft-sxr">
-                                <rect key="frame" x="37.5" y="210" width="300" height="71.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOm-ft-sxr">
+                                <rect key="frame" x="37.5" y="245" width="300" height="0.0"/>
                                 <color key="backgroundColor" red="0.80833094632020919" green="0.8553060979234256" blue="0.92297469689438383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="wXU-sE-Zt6"/>
                                 </constraints>
-                                <string key="text">Let's test it with this text. How will it look if this text overlaps the photo? Will it automatically adjust for the right number of lines?</string>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,7 +62,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="izG-Pr-KJi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="E0T-9r-5Vm"/>
+                            <constraint firstItem="izG-Pr-KJi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="E0T-9r-5Vm"/>
                             <constraint firstItem="PPN-3G-DDh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gas-1M-a3f"/>
                             <constraint firstItem="PPN-3G-DDh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JGr-Zu-5wX"/>
                             <constraint firstItem="PPN-3G-DDh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JXI-jQ-Cug"/>

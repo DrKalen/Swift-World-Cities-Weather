@@ -15,11 +15,15 @@ class ViewController: UIViewController {
     
     @IBAction func getWeatherButton(_ sender: UIButton) {
         cityTextField.resignFirstResponder()
+        self.weatherLabel.text = ""
         let desiredCity = NSString(string: cityTextField.text ?? "X").replacingOccurrences(of: " ", with: "-")
         if let url = URL(string: "https://www.weather-forecast.com/locations/" + desiredCity + "/forecasts/latest") {
             let request = NSMutableURLRequest(url: url)
             let task = URLSession.shared.dataTask(with: request as URLRequest) {
                 data, response, error in
+                
+                var message = ""
+                
                 if let error = error {
                     print(error)
                     DispatchQueue.main.sync {
@@ -28,19 +32,32 @@ class ViewController: UIViewController {
                 } else {
                     if let unwrappedData = data {
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
-                        print(dataString ?? "Didn't work!")
+                        var stringSeparator = "Weather Today </h2>(1&ndash;3 days)</span><p class=\"b-forecast__table-description-content\"><span class=\"phrase\">"
+                        if let contentArray = dataString?.components(separatedBy: stringSeparator) {
+                            if contentArray.count > 1 {
+                                stringSeparator = "</span>"
+                                let newContentArray = contentArray[1].components(separatedBy: stringSeparator)
+                                if newContentArray.count > 1 {
+                                    message = newContentArray[0].replacingOccurrences(of: "&deg;", with: "°")
+                                    print(message)     //should be the forecast we want!
+                                }
+                            }
+                        }
                         DispatchQueue.main.sync {
                             if let result = dataString {
                                 if result.contains("mistyped the address") {
                                 self.weatherLabel.text = "The weather there couldn't be found. Please try again."
                                 }
                             }
+                            self.weatherLabel.text = message
                             print("You want the weather for \(desiredCity), is that right?")
                         }
                     }
                 }
             }
             task.resume()
+        } else {
+            weatherLabel.text = "The weather there couldn't be found. Please try again."
         }
     }
     

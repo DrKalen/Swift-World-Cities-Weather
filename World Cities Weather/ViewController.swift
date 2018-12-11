@@ -15,6 +15,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func getWeatherButton(_ sender: UIButton) {
         cityTextField.resignFirstResponder()
+        getTheWeather()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func getTheWeather() {
         self.weatherLabel.text = ""
         let desiredCity = NSString(string: cityTextField.text ?? "X").replacingOccurrences(of: " ", with: "-")
         if let url = URL(string: "https://www.weather-forecast.com/locations/" + desiredCity + "/forecasts/latest") {
@@ -32,6 +45,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     if let unwrappedData = data {
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
+                        if let result = dataString {
+                            if result.contains("mistyped the address") {
+                                message = "The weather there couldn't be found. Please try again."
+                            }
+                        }
                         var stringSeparator = "Weather Today </h2>(1&ndash;3 days)</span><p class=\"b-forecast__table-description-content\"><span class=\"phrase\">"
                         if let contentArray = dataString?.components(separatedBy: stringSeparator) {
                             if contentArray.count > 1 {
@@ -42,32 +60,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                     print(message)     //should be the forecast we want!
                                 }
                             }
-                        }
-                        DispatchQueue.main.sync {
+                        } else {
                             if let result = dataString {
                                 if result.contains("mistyped the address") {
-                                self.weatherLabel.text = "The weather there couldn't be found. Please try again."
+                                    message = "The weather there couldn't be found. Please try again."
                                 }
                             }
-                            self.weatherLabel.text = message
-                            print("You want the weather for \(desiredCity), is that right?")
                         }
+                        print(message)
+                        print("You want the weather for \(desiredCity), is that right?")
                     }
                 }
+                DispatchQueue.main.sync(execute: {
+                    
+                    self.weatherLabel.text = message
+                    
+                })
             }
             task.resume()
-        } else {
-            weatherLabel.text = "The weather there couldn't be found. Please try again."
         }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
     
     override func viewDidLoad() {
